@@ -952,7 +952,13 @@
                     rest = true;
                 }
 
-                expr = parseTypeExpression();
+                if (token === Token.RPAREN || token === Token.COMMA) {
+                    expr = {
+                        type: Syntax.AllLiteral
+                    };
+                } else {
+                    expr = parseTypeExpression();
+                }
                 if (expr.type === Syntax.NameExpression && token === Token.COLON) {
                     // Identifier ':' TypeExpression
                     consume(Token.COLON);

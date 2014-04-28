@@ -1315,6 +1315,19 @@ describe('parseType', function () {
 		 "result": null
 		});
     });
+    it('function type with rest param without type', function () {
+        var type = doctrine.parseType("function(...)");
+        type.should.eql({
+            "type": "FunctionType",
+            "params": [{
+                "type": "RestType",
+                "expression": {
+                    "type": "AllLiteral"
+                }
+            }],
+            "result": null
+        });
+    });
 });
 
 describe('parseParamType', function () {
