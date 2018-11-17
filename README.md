@@ -1,8 +1,14 @@
+# @teppeis/doctrine
+
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Downloads][downloads-image]][downloads-url]
-[![Join the chat at https://gitter.im/eslint/doctrine](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/eslint/doctrine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+This is forked version from [doctrine](https://www.npmjs.com/package/doctrine) by teppeis under Apache License 2.0.
+
+```
+$ npm i @teppeis/doctrine
+```
+
+---
 
 # Doctrine
 
@@ -150,16 +156,9 @@ Apache License
 Version 2.0, January 2004
 http://www.apache.org/licenses/
 
-
 ### Where to ask for help?
 
 Join our [Chatroom](https://gitter.im/eslint/doctrine)
 
-[npm-image]: https://img.shields.io/npm/v/doctrine.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/doctrine
-[travis-image]: https://img.shields.io/travis/eslint/doctrine/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eslint/doctrine
-[coveralls-image]: https://img.shields.io/coveralls/eslint/doctrine/master.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/eslint/doctrine?branch=master
-[downloads-image]: http://img.shields.io/npm/dm/doctrine.svg?style=flat-square
-[downloads-url]: https://www.npmjs.com/package/doctrine
+[npm-image]: https://img.shields.io/npm/v/@teppeis/doctrine.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@teppeis/doctrine

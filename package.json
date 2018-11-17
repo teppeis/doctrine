@@ -1,8 +1,11 @@
 {
-  "name": "doctrine",
+  "name": "@teppeis/doctrine",
   "description": "JSDoc parser",
-  "homepage": "https://github.com/eslint/doctrine",
+  "homepage": "https://github.com/teppeis/doctrine/tree/teppeis",
   "main": "lib/doctrine.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "3.0.0",
   "engines": {
     "node": ">=6.0.0"
@@ -13,19 +16,7 @@
   "files": [
     "lib"
   ],
-  "maintainers": [
-    {
-      "name": "Nicholas C. Zakas",
-      "email": "nicholas+npm@nczconsulting.com",
-      "web": "https://www.nczonline.net"
-    },
-    {
-      "name": "Yusuke Suzuki",
-      "email": "utatane.tea@gmail.com",
-      "web": "https://github.com/Constellation"
-    }
-  ],
-  "repository": "eslint/doctrine",
+  "repository": "teppeis/doctrine",
   "devDependencies": {
     "coveralls": "^3.0.1",
     "dateformat": "^1.0.11",
