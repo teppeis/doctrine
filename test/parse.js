@@ -1731,6 +1731,19 @@ describe('parseType', function () {
             range: [0, 17]
         });
     });
+    it('function type with rest param no type', function () {
+        var type = doctrine.parseType("function(...)", {range: true});
+        type.should.eql({
+            "type": "FunctionType",
+            "params": [{
+                "type": "RestType",
+                "expression": null,
+                range: [9, 12],
+            }],
+            "result": null,
+            range: [0, 13]
+        });
+    });
 
     it('string value in type', function () {
         var type;
