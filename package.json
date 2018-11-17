@@ -1,7 +1,7 @@
 {
   "name": "@teppeis/doctrine",
   "description": "JSDoc parser",
-  "homepage": "https://github.com/teppeis/doctrine/tree/teppeis",
+  "homepage": "https://github.com/teppeis/doctrine",
   "main": "lib/doctrine.js",
   "publishConfig": {
     "access": "public"
