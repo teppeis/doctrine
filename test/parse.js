@@ -1636,6 +1636,64 @@ describe('parseType', function () {
             range: [0, 14]
         });
     });
+    it('function type with this', function () {
+        var type = doctrine.parseType("function(this:a, b)", {range: true});
+        type.should.eql({
+            "type": "FunctionType",
+            "params": [
+                {
+                    "type": "NameExpression",
+                    "name": "b",
+                    range: [17, 18]
+                }
+            ],
+            "result": null,
+            "this": {
+                "type": "NameExpression",
+                "name": "a",
+                range: [14, 15]
+            },
+            range: [0, 19]
+        });
+    });
+    it('function type with this all literal', function () {
+        var type = doctrine.parseType("function(this:*, b)", {range: true});
+        type.should.eql({
+            "type": "FunctionType",
+            "params": [
+                {
+                    "type": "NameExpression",
+                    "name": "b",
+                    range: [17, 18]
+                }
+            ],
+            "result": null,
+            "this": {
+                "type": "AllLiteral",
+                range: [14, 15]
+            },
+            range: [0, 19]
+        });
+    });
+    it('function type with this nullable literal', function () {
+        var type = doctrine.parseType("function(this:?, b)", {range: true});
+        type.should.eql({
+            "type": "FunctionType",
+            "params": [
+                {
+                    "type": "NameExpression",
+                    "name": "b",
+                    range: [17, 18]
+                }
+            ],
+            "result": null,
+            "this": {
+                "type": "NullableLiteral",
+                range: [14, 15]
+            },
+            range: [0, 19]
+        });
+    });
     it('function type with rest param', function () {
         var type = doctrine.parseType("function(...a)", {range: true});
         type.should.eql({
