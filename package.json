@@ -6,7 +6,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.1",
+  "version": "3.1.0",
   "engines": {
     "node": ">=6.0.0"
   },
