@@ -125,10 +125,37 @@ describe('parse', function () {
                 " * @const @const",
                 " */"
             ].join('\n'), { unwrap: true });
-        res.tags.should.have.length(3);
+        res.tags.should.have.length(6);
         res.tags[0].should.have.property('title', 'const');
+        res.tags[0].should.have.property('type', null);
         res.tags[1].should.have.property('title', 'const');
+        res.tags[1].should.have.property('type', null);
         res.tags[2].should.have.property('title', 'const');
+        res.tags[2].should.have.property('type', null);
+        res.tags[3].should.have.property('title', 'const');
+        res.tags[3].should.have.property('type', null);
+        res.tags[4].should.have.property('title', 'const');
+        res.tags[4].should.have.property('type', null);
+        res.tags[5].should.have.property('title', 'const');
+        res.tags[5].should.have.property('type', null);
+    });
+
+    it('multiple tags in one line', function () {
+        var res = doctrine.parse(
+            [
+                "/**",
+                " * @constructor @struct @implements {string} @final",
+                " */"
+            ].join('\n'), { unwrap: true });
+        res.tags.should.have.length(4);
+        res.tags[0].should.have.property('title', 'constructor');
+        res.tags[1].should.have.property('title', 'struct');
+        res.tags[2].should.have.property('title', 'implements');
+        res.tags[2].type.should.eql({
+            type: 'NameExpression',
+            name: 'string'
+        });
+        res.tags[3].should.have.property('title', 'final');
     });
 
     it('constructor', function () {
