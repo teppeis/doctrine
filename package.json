@@ -33,6 +33,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "doc": "npx browserify lib/doctrine.js -s doctrine > doctrine.bundle.js",
     "pretest": "npm run lint",
     "test": "nyc mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
