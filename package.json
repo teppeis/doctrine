@@ -3,6 +3,7 @@
   "description": "JSDoc parser",
   "homepage": "https://github.com/teppeis/doctrine",
   "main": "lib/doctrine.js",
+  "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
