@@ -1,7 +1,5 @@
-// Type definitions for doctrine the JSDoc parser
-// Project: https://github.com/eslint/doctrine
-// Definitions by: rictic <https://github.com/rictic>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// Forked from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/doctrine/index.d.ts
+// Originally defined by: rictic <https://github.com/rictic>
 
 /**
  * Doctrine is a JSDoc parser that parses documentation comments from JavaScript

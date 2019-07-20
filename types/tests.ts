@@ -1,3 +1,6 @@
+// Forked from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/doctrine/doctrine-tests.ts
+// Originally defined by: rictic <https://github.com/rictic>
+
 import * as doctrine from '.';
 
 let string: string = 'string';
