@@ -3,6 +3,7 @@
   "description": "JSDoc parser",
   "homepage": "https://github.com/teppeis/doctrine",
   "main": "lib/doctrine.js",
+  "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -14,7 +15,8 @@
     "lib": "./lib"
   },
   "files": [
-    "lib"
+    "lib",
+    "types/index.d.ts"
   ],
   "repository": "teppeis/doctrine",
   "devDependencies": {
@@ -29,13 +31,14 @@
     "semver": "^5.0.3",
     "shelljs": "^0.5.3",
     "shelljs-nodecli": "^0.1.1",
-    "should": "^5.0.1"
+    "should": "^5.0.1",
+    "typescript": "^3.5.3"
   },
   "license": "Apache-2.0",
   "scripts": {
     "doc": "npx browserify lib/doctrine.js -s doctrine > doctrine.bundle.js",
     "pretest": "npm run lint",
-    "test": "nyc mocha",
+    "test": "nyc mocha && tsc",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint lib/",
     "generate-release": "eslint-generate-release",
