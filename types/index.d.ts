@@ -87,81 +87,135 @@ export interface Tag {
   /** The name of the thing this tag is documenting, if any. */
   name?: string;
   /** The description of the thing this tag is documenting. */
-  description: string|null;
+  description: string | null;
   /** The type of the thing this tag is documenting. */
-  type?: Type|null;
+  type?: Type | null;
   kind?: string;
   /** Any errors that were encountered in parsing the tag. */
   errors?: string[];
 }
 
 export type Type =
-    (type.AllLiteral | type.ArrayType | type.FieldType | type.FunctionType |
-     type.NameExpression | type.NonNullableType | type.NullableLiteral |
-     type.NullableType | type.NullLiteral | type.OptionalType |
-     type.ParameterType | type.RecordType | type.RestType |
-     type.TypeApplication | type.UndefinedLiteral | type.UnionType |
-     type.VoidLiteral);
+  | type.AllLiteral
+  | type.ArrayType
+  | type.FieldType
+  | type.FunctionType
+  | type.NameExpression
+  | type.NonNullableType
+  | type.NullableLiteral
+  | type.NullableType
+  | type.NullLiteral
+  | type.OptionalType
+  | type.ParameterType
+  | type.RecordType
+  | type.RestType
+  | type.TypeApplication
+  | type.UndefinedLiteral
+  | type.UnionType
+  | type.VoidLiteral;
 
 export module type {
-  export interface AllLiteral { type: 'AllLiteral' }
-  export interface ArrayType { type: 'ArrayType', elements: Type[] }
-  export interface FieldType { type: 'FieldType', key: string, value?: Type }
+  export interface AllLiteral {
+    type: "AllLiteral";
+  }
+  export interface ArrayType {
+    type: "ArrayType";
+    elements: Type[];
+  }
+  export interface FieldType {
+    type: "FieldType";
+    key: string;
+    value?: Type;
+  }
   export interface FunctionType {
-    type: 'FunctionType';
-    'this': Type;
-    'new': Type, params: Type[];
-    result: Type[]
+    type: "FunctionType";
+    this: Type;
+    new: Type;
+    params: Type[];
+    result: Type[];
   }
-  export interface NameExpression { type: 'NameExpression', name: string }
+  export interface NameExpression {
+    type: "NameExpression";
+    name: string;
+  }
   export interface NonNullableType {
-    type: 'NonNullableType', prefix: boolean, expression: Type
+    type: "NonNullableType";
+    prefix: boolean;
+    expression: Type;
   }
-  export interface NullableLiteral { type: 'NullableLiteral' }
+  export interface NullableLiteral {
+    type: "NullableLiteral";
+  }
   export interface NullableType {
-    type: 'NullableType', prefix: boolean, expression: Type
+    type: "NullableType";
+    prefix: boolean;
+    expression: Type;
   }
-  export interface NullLiteral { type: 'NullLiteral' }
-  export interface OptionalType { type: 'OptionalType', expression: Type }
+  export interface NullLiteral {
+    type: "NullLiteral";
+  }
+  export interface OptionalType {
+    type: "OptionalType";
+    expression: Type;
+  }
   export interface ParameterType {
-    type: 'ParameterType', name: string, expression: Type
+    type: "ParameterType";
+    name: string;
+    expression: Type;
   }
-  export interface RecordType { type: 'RecordType', fields: Type[] }
+  export interface RecordType {
+    type: "RecordType";
+    fields: Type[];
+  }
   export interface RestType {
-    type: 'RestType';
+    type: "RestType";
     expression?: Type;
   }
   export interface TypeApplication {
-    type: 'TypeApplication', expression: Type, applications: Type[]
+    type: "TypeApplication";
+    expression: Type;
+    applications: Type[];
   }
-  export interface UndefinedLiteral { type: 'UndefinedLiteral' }
-  export interface UnionType { type: 'UnionType', elements: Type[] }
-  export interface VoidLiteral { type: 'VoidLiteral' }
+  export interface UndefinedLiteral {
+    type: "UndefinedLiteral";
+  }
+  export interface UnionType {
+    type: "UnionType";
+    elements: Type[];
+  }
+  export interface VoidLiteral {
+    type: "VoidLiteral";
+  }
 
   export function stringify(type: Type): string;
-  export function parseType(src: string, options?: {midstream: boolean}): Type;
+  export function parseType(
+    src: string,
+    options?: { midstream: boolean }
+  ): Type;
   export function parseParamType(
-      src: string, options?: {midstream: boolean}): Type;
+    src: string,
+    options?: { midstream: boolean }
+  ): Type;
 
   export const Syntax: {
-    NullableLiteral: 'NullableLiteral',
-    AllLiteral: 'AllLiteral',
-    NullLiteral: 'NullLiteral',
-    UndefinedLiteral: 'UndefinedLiteral',
-    VoidLiteral: 'VoidLiteral',
-    UnionType: 'UnionType',
-    ArrayType: 'ArrayType',
-    RecordType: 'RecordType',
-    FieldType: 'FieldType',
-    FunctionType: 'FunctionType',
-    ParameterType: 'ParameterType',
-    RestType: 'RestType',
-    NonNullableType: 'NonNullableType',
-    OptionalType: 'OptionalType',
-    NullableType: 'NullableType',
-    NameExpression: 'NameExpression',
-    TypeApplication: 'TypeApplication'
-  }
+    NullableLiteral: "NullableLiteral";
+    AllLiteral: "AllLiteral";
+    NullLiteral: "NullLiteral";
+    UndefinedLiteral: "UndefinedLiteral";
+    VoidLiteral: "VoidLiteral";
+    UnionType: "UnionType";
+    ArrayType: "ArrayType";
+    RecordType: "RecordType";
+    FieldType: "FieldType";
+    FunctionType: "FunctionType";
+    ParameterType: "ParameterType";
+    RestType: "RestType";
+    NonNullableType: "NonNullableType";
+    OptionalType: "OptionalType";
+    NullableType: "NullableType";
+    NameExpression: "NameExpression";
+    TypeApplication: "TypeApplication";
+  };
 }
 
 export const version: string;
