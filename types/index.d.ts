@@ -114,7 +114,7 @@ export type Type =
   | type.UnionType
   | type.VoidLiteral;
 
-export module type {
+export namespace type {
   export interface AllLiteral {
     type: "AllLiteral";
   }
@@ -125,14 +125,14 @@ export module type {
   export interface FieldType {
     type: "FieldType";
     key: string;
-    value?: Type;
+    value: Type | null;
   }
   export interface FunctionType {
     type: "FunctionType";
-    this: Type;
-    new: Type;
+    this?: Type;
+    new?: boolean;
     params: Type[];
-    result: Type[];
+    result: Type | null;
   }
   export interface NameExpression {
     type: "NameExpression";
@@ -169,7 +169,7 @@ export module type {
   }
   export interface RestType {
     type: "RestType";
-    expression?: Type;
+    expression: Type | null;
   }
   export interface TypeApplication {
     type: "TypeApplication";
